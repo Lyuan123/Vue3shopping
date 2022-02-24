@@ -1,10 +1,13 @@
 <template>
-  <!-- 一级路由 -->
-  <RouterView />
+  <div class="container">
+      
+  </div>
 </template>
 
 <script>
+export default {
 
+}
 </script>
 
 <style>

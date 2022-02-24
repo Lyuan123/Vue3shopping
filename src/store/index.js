@@ -1,74 +1,22 @@
 import { createStore } from 'vuex'
+import createPersistedstate  from 'vuex-persistedstate'
 
-// a模块
-const moduleA = {
-  state:{
-    username:'moudleA'
-  },
-  getters:{
-    newName(state){
-      return state.username +'!!!'
-    }
-  },
-  mutations:{
-    updateName (state){
-      stete.username = "moduleAAAAAA"
-    }
-  }
-}
-// b模块
-const moduleB = {
-  namespaced: true,
-  state:{
-    username:'moudleB'
-  },
-  getters:{
-    newName(state){
-      return state.username +'!!!'
-    }
-  },
-  mutations: {
-        updateName(state) {
-          state.username = 'ls'
-        }
-      },
-      actions: {
-        updateName (ctx) {
-          // 发请求
-          setTimeout(()=>{
-            ctx.commit('updateName')
-          },1000)
-        }
-      },
-}
+import cart from './modules/cart'
+import user from './modules/user'
+import category from './modules/category'
 export default createStore({
   modules:{
-    moduleA,
-    moduleB
-  }
+    cart,
+    user,
+    category
+  },
+  // 配置插件
+  plugins:[
+    // 默认存储在localStorage
+    createPersistedstate({
+      // 本地存储名字
+      key:'erabbit-client-pc-store',
+      paths:['user','cart']
+    })
+  ]
 })
-// export default createStore({
-//   state: {
-//     username: 'zs'
-//   },
-//   getters:{
-//     newName (state){
-//       return state.username + "!!!"
-//     }
-//   },
-//   mutations: {
-//     updateName(state) {
-//       state.username = 'ls'
-//     }
-//   },
-//   actions: {
-//     updateName (ctx) {
-//       // 发请求
-//       setTimeout(()=>{
-//         ctx.commit('updateName')
-//       },1000)
-//     }
-//   },
-//   modules: {
-//   }
-// })
