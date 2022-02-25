@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-      
+asda
   </div>
 </template>
 
@@ -10,6 +10,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+.container{
+    .hoverShadow()
+}
 </style>
