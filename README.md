@@ -1,4 +1,5 @@
-# dianshang
+# 
+登录功能：扫码登录，qq登录，账号密码登录
 
 ## Project setup
 ```

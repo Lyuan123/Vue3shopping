@@ -2,6 +2,9 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 const Layout = () => import('@/views/Layout')
 const Home = () => import('@/views/home')
+
+const Login =() =>import('@/views/login/index')
+
 const routes = [
   // 一级路由布局容器
   {
@@ -9,6 +12,10 @@ const routes = [
     children: [
       { path: '/', component: Home }
     ]
+  },
+  {
+    path:'/login',
+    component:Login
   }
 ]
 
